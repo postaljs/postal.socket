@@ -44,6 +44,9 @@ var sub = remoteChannel.subscribe( function( data, env ) { console.log( JSON.str
 remoteChannel.publish({ greeting: "Oh, hai", moar: "This will get published locally and remotely" });
 ```
 
+Currently postal.socket only enables remote channel functionality if you use an actual channel object (via `postal.channel`).  You cannot publish or subscribe using the shortcut `postal.subscribe` or `postal.publish` methods.  You *can*, however, publish to the socket connection directly by calling `postal.connections.socket.publish()`, passing in a valid postal envelope.  This will not publish locally, but only to the remote socket listener(s).  Hey, I *did* say it was experimental, didn't I?
+
+
 ## Roadmap
 This plugin is proof-of-concept.  The focus has been on clients subscribing to server-side channels, with the ability to publish remotely as well.  However, no infrastructure is in place for
 the server to subscribe to remote-client channels.  Now that I've proven the concept, this plugin will probably get a ground-up-rewrite to support two way subscription proxying and publishing.

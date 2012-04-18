@@ -1,0 +1,13 @@
+{
+    "source": "src",
+    "output": "lib",
+	"name": {
+		"postal-socket-client.js"     : "browser/postal.socket-client.js",
+		"postal-socket-client.min.js" : "browser/postal.socket-client.min.js",
+		"postal-socket-node.js" : "node/postal.socket-host.js",
+		"socket-io-provider.js" : "node/socket-io-provider.js"
+	},
+    "lint": {},
+    "uglify": {},
+    "extensions": { "uglify": "min" }
+}

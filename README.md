@@ -13,6 +13,7 @@ postal.socket is a plugin for postal.js.  It wraps socket.io both in the browser
 			Browser
             <ul>
 				<li>underscore.js</li>
+				<li>socket.io</li>
 				<li>postal.js</li>
 				<li>machina.js</li>
 			</ul>
@@ -21,6 +22,7 @@ postal.socket is a plugin for postal.js.  It wraps socket.io both in the browser
 			Node
 			<ul>
 				<li>underscore.js</li>
+				<li>socket.io</li>
 				<li>postal.js</li>
 				<li>machina.js</li>
 			</ul>

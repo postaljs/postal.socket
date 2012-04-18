@@ -1,4 +1,4 @@
-var SocketChannel = postal.channelTypes.SocketChannel = function( channelName, defaultTopic ) {
+var SocketChannel = postal.channelTypes.websocket = function( channelName, defaultTopic ) {
 	var channel = postal.channel( channelName, defaultTopic ),
 		localSubscribe = channel.subscribe,
 		localPublish = channel.publish,

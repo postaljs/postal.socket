@@ -30,6 +30,20 @@ postal.socket is a plugin for postal.js.  It wraps socket.io both in the browser
 	</tr>
 </table>
 
+## Quick and Dirty API
+```javascript
+// get a handle to a remote channel
+// third arg with { type: "websocket" } tells postal to use the SocketChannel
+// which the plugin registers under postal.channelTypes (normal default is LocalChannel)
+var remoteChannel = postal.channel( "SomeChannel", "Some.Topic", { type: "websocket" });
+
+// subscribe to the remote channel
+var sub = remoteChannel.subscribe( function( data, env ) { console.log( JSON.stringify( env ) ); });
+
+// publish locally and remotely
+remoteChannel.publish({ greeting: "Oh, hai", moar: "This will get published locally and remotely" });
+```
+
 ## Roadmap
 This plugin is proof-of-concept.  The focus has been on clients subscribing to server-side channels, with the ability to publish remotely as well.  However, no infrastructure is in place for
 the server to subscribe to remote-client channels.  Now that I've proven the concept, this plugin will probably get a ground-up-rewrite to support two way subscription proxying and publishing.
